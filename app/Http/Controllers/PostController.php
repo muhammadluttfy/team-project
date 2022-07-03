@@ -10,16 +10,17 @@ class PostController extends Controller
     public function index()
     {
         return view('posts', [
-            "title" => "Posts",
-            "posts" => Post::all()
+            "title" => "All Posts",
+            "active" => 'posts',
+            "posts" => Post::latest()->get()
         ]);
     }
 
-    public function show($slug)
+    public function post(Post $post)
     {
         return view('post', [
             "title" => "Single Post",
-            "post" => Post::find($slug)
+            "post" => $post
         ]);
     }
 
