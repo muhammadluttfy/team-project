@@ -7,7 +7,7 @@
 
                 <h1 class="text-center">{{ $post->title }}</h1>
 
-                <p class="mb-4 text-center">By. <a href="#" style="text-decoration:none">{{ $post->user->name }}</a> in
+                <p class="mb-4 text-center">By. <a href="/posts?author={{ $post->author->username }}" style="text-decoration:none">{{ $post->author->name }}</a> in
                     <a href="/posts?category={{ $post->category->slug }}"
                         style="text-decoration:none">{{ $post->category->name }}</a>
                 </p>

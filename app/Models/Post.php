@@ -10,7 +10,7 @@ class Post extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
-    protected $with = ['category', 'user'];
+    protected $with = ['category', 'author'];
 
 
     public function scopeFilter($query, array $filters)
@@ -41,8 +41,8 @@ class Post extends Model
     {
         return $this->belongsTo(Category::class);
     }
-    public function User()
+    public function author()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

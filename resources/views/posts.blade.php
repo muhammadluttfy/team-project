@@ -31,8 +31,8 @@
             <div class="card-body text-center">
                 <h2 class="card-title">{{ $posts[0]->title }}</h2>
                 <small class="text-muted">
-                    <p>By. <a href="/posts?author={{ $posts[0]->user->username }}"
-                            style="text-decoration:none">{{ $posts[0]->user->name }}</a> in <a
+                    <p>By. <a href="/posts?author={{ $posts[0]->author->username }}"
+                            style="text-decoration:none">{{ $posts[0]->author->name }}</a> in <a
                             href="/posts?category={{ $posts[0]->category->slug }}"
                             style="text-decoration:none">{{ $posts[0]->category->name }}</a>
                         {{ $posts[0]->created_at->diffForHumans() }}</p>
@@ -56,8 +56,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $post->title }}</h5>
                                 <small class="text-muted">
-                                    <p>By. <a href="/posts?author={{ $post->user->username }}"
-                                            style="text-decoration:none">{{ $post->user->name }}</a>
+                                    <p>By. <a href="/posts?author={{ $post->author->username }}"
+                                            style="text-decoration:none">{{ $post->author->name }}</a>
                                         {{ $post->created_at->diffForHumans() }}</p>
                                 </small>
                                 <p class="card-text">{{ $post->excerpt }}</p>
@@ -71,4 +71,9 @@
     @else
         <p class="text-center fs-4">No post found.</p>
     @endif
+
+    <div class="d-flex justify-content-end mb-2">
+        {{ $posts->links() }}
+    </div>
+
 @endsection
