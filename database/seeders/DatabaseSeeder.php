@@ -17,8 +17,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(5)->create();
+        // User::factory(5)->create();
 
+<<<<<<< HEAD
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
@@ -35,6 +36,46 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'dea@gmail.com',
         //     'password' => bcrypt('password')
         // ]);
+=======
+        User::insert([
+            [
+                'name' => 'Ahlun Nazar Bin Kasmin',
+                'username' => 'ahlunnazar',
+                'nim' => '18083000078',
+                'profession' => 'Web Developer',
+                'website' => 'https://sid-purwodadi.online',
+                'email' => 'ahlunnazar@gmail.com',
+                'password' => 'password'
+            ],
+            [
+                'name' => 'Muhamad Lutfi E. K.',
+                'username' => 'muhammadluttfy',
+                'nim' => '18083000124',
+                'profession' => 'Web Developer',
+                'website' => 'https://dev.semuabisa.web.id',
+                'email' => 'muhammadlutfi3101@gmail.com',
+                'password' => 'password'
+            ],
+            [
+                'name' => 'Hamas Afif Aswari',
+                'username' => 'cyberhamas',
+                'nim' => '18083000106',
+                'profession' => 'Cyber Security',
+                'website' => 'https://cyberhamas.site/',
+                'email' => 'cyberhamas@gmail.com',
+                'password' => 'password'
+            ],
+            [
+                'name' => 'Rizko Adrian Azka',
+                'username' => 'rizkoazka',
+                'nim' => '18083000114',
+                'profession' => 'Data Science',
+                'website' => 'https://rizkoazka.site/',
+                'email' => 'rizkoadrian@gmail.com',
+                'password' => 'password'
+            ],
+        ]);
+>>>>>>> 9237b9fa3377beaa1aec84d8045bf12d9af73ec7
 
         Category::create([
             'name' => 'Programing',

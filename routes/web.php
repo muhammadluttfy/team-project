@@ -33,8 +33,12 @@ Route::get('/about', function () {
     return view('about', [
         "title" => "About",
         'active' => 'about',
-        "name" => "Hamas Afif Aswari",
-        "email" => "cyberhamas@gmail.com",
+        'users' => User::all(),
+        // get post by user id 1
+        'posts_1' => Post::where('user_id', 1)->get()->count(),
+        'posts_2' => Post::where('user_id', 2)->get()->count(),
+        'posts_3' => Post::where('user_id', 3)->get()->count(),
+        'posts_4' => Post::where('user_id', 4)->get()->count(),
         "image" => "img/photo.png"
     ]);
 });
